@@ -1,0 +1,280 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockVision IA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">SV</div>
+            <div>
+                <strong>StockVision</strong>
+                <span>INTELLIGENCE</span>
+            </div>
+        </div>
+
+        <nav>
+            <a class="active" href="#">
+                <span>▦</span> Dashboard
+            </a>
+            <a href="#">
+                <span>◉</span> Monitoramento
+            </a>
+            <a href="#">
+                <span>⚠</span> Alertas
+                <b class="nav-badge">3</b>
+            </a>
+            <a href="#">
+                <span>▤</span> Estoque
+            </a>
+        </nav>
+
+        <div class="system">
+            <span class="online-dot"></span>
+            <div>
+                <strong>Sistema online</strong>
+                <small>IA operando normalmente</small>
+            </div>
+        </div>
+    </aside>
+
+    <main>
+
+        <header>
+            <div>
+                <p class="eyebrow">CENTRAL DE MONITORAMENTO</p>
+                <h1>Dashboard</h1>
+            </div>
+
+            <div class="header-status">
+                <span class="pulse"></span>
+                SISTEMA ATIVO
+            </div>
+        </header>
+
+        <section class="stats">
+
+            <div class="card stat">
+                <div class="stat-icon">◉</div>
+                <div>
+                    <span>CÂMERAS ATIVAS</span>
+                    <strong>04</strong>
+                    <small>Monitoramento em tempo real</small>
+                </div>
+            </div>
+
+            <div class="card stat">
+                <div class="stat-icon">✓</div>
+                <div>
+                    <span>ESTOQUE NORMAL</span>
+                    <strong>86%</strong>
+                    <small>Dentro do nível esperado</small>
+                </div>
+            </div>
+
+            <div class="card stat alert-stat">
+                <div class="stat-icon">!</div>
+                <div>
+                    <span>LACUNAS DETECTADAS</span>
+                    <strong id="gapCount">03</strong>
+                    <small>Necessitam reposição</small>
+                </div>
+            </div>
+
+            <div class="card stat">
+                <div class="stat-icon">AI</div>
+                <div>
+                    <span>IA STATUS</span>
+                    <strong class="active-text">ATIVA</strong>
+                    <small>Modelo em operação</small>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="content-grid">
+
+            <div class="card camera-card">
+
+                <div class="card-header">
+                    <div>
+                        <span class="label">MONITORAMENTO</span>
+                        <h2>Câmera 01 — Setor A</h2>
+                    </div>
+
+                    <div class="camera-live">
+                        <span></span> AO VIVO
+                    </div>
+                </div>
+
+                <div class="camera-view">
+
+                    <div class="scan-line"></div>
+
+                    <div class="shelf shelf-one">
+                        <div class="product p1"></div>
+                        <div class="product p2"></div>
+                        <div class="product p3"></div>
+                        <div class="gap detected-gap">
+                            <span>LACUNA</span>
+                        </div>
+                        <div class="product p4"></div>
+                        <div class="product p5"></div>
+                    </div>
+
+                    <div class="shelf shelf-two">
+                        <div class="product p2"></div>
+                        <div class="product p4"></div>
+                        <div class="product p1"></div>
+                        <div class="product p5"></div>
+                        <div class="product p3"></div>
+                    </div>
+
+                    <div class="camera-overlay">
+                        <span>CAM 01</span>
+                        <span>SETOR A</span>
+                    </div>
+
+                    <div class="detection-box">
+                        <span class="box-label">LACUNA DETECTADA</span>
+                    </div>
+
+                </div>
+
+                <div class="camera-footer">
+                    <div>
+                        <span class="status-dot"></span>
+                        Análise por Inteligência Artificial
+                    </div>
+                    <span>FPS 24</span>
+                </div>
+
+            </div>
+
+            <div class="card alerts-card">
+
+                <div class="card-header">
+                    <div>
+                        <span class="label">EVENTOS RECENTES</span>
+                        <h2>Alertas</h2>
+                    </div>
+
+                    <button id="clearAlerts">Limpar</button>
+                </div>
+
+                <div id="alertsList">
+
+                    <div class="alert-item">
+                        <div class="alert-symbol">!</div>
+                        <div class="alert-info">
+                            <strong>Lacuna detectada</strong>
+                            <span>Lote A — Prateleira 03</span>
+                            <small>Agora mesmo</small>
+                        </div>
+                        <i></i>
+                    </div>
+
+                    <div class="alert-item">
+                        <div class="alert-symbol">!</div>
+                        <div class="alert-info">
+                            <strong>Lacuna detectada</strong>
+                            <span>Lote C — Prateleira 01</span>
+                            <small>Há 4 minutos</small>
+                        </div>
+                        <i></i>
+                    </div>
+
+                    <div class="alert-item">
+                        <div class="alert-symbol">!</div>
+                        <div class="alert-info">
+                            <strong>Lacuna detectada</strong>
+                            <span>Lote B — Prateleira 05</span>
+                            <small>Há 9 minutos</small>
+                        </div>
+                        <i></i>
+                    </div>
+
+                </div>
+
+                <div class="alert-footer">
+                    <span>Última sincronização</span>
+                    <strong id="syncTime">agora</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="bottom-grid">
+
+            <div class="card activity-card">
+                <div class="card-header">
+                    <div>
+                        <span class="label">ATIVIDADE</span>
+                        <h2>Monitoramento do sistema</h2>
+                    </div>
+                </div>
+
+                <div class="activity">
+                    <div class="activity-line"></div>
+
+                    <div class="activity-row">
+                        <span class="activity-dot"></span>
+                        <div>
+                            <strong>IA analisou a Câmera 01</strong>
+                            <small>Detecção concluída</small>
+                        </div>
+                        <time>20:51</time>
+                    </div>
+
+                    <div class="activity-row">
+                        <span class="activity-dot"></span>
+                        <div>
+                            <strong>Estoque atualizado</strong>
+                            <small>Dados sincronizados</small>
+                        </div>
+                        <time>20:49</time>
+                    </div>
+
+                    <div class="activity-row">
+                        <span class="activity-dot"></span>
+                        <div>
+                            <strong>Sistema iniciado</strong>
+                            <small>Todos os serviços online</small>
+                        </div>
+                        <time>20:45</time>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card ai-card">
+                <div class="ai-glow"></div>
+                <span class="label">INTELIGÊNCIA ARTIFICIAL</span>
+                <h2>StockVision AI</h2>
+                <p>Monitoramento automático de prateleiras e identificação de lacunas.</p>
+
+                <div class="ai-status">
+                    <span class="pulse"></span>
+                    Modelo operacional
+                </div>
+            </div>
+
+        </section>
+
+        <footer>
+            <span>STOCKVISION IA © 2026</span>
+            <span>Monitoramento inteligente de estoque</span>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
